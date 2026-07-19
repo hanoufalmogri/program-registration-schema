@@ -1,5 +1,7 @@
 # Program Registration Schema
 
+![License](https://img.shields.io/badge/License-MIT-green) ![TypeScript](https://img.shields.io/badge/TypeScript-typed-blue) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-database-blue) ![Drizzle ORM](https://img.shields.io/badge/Drizzle_ORM-schema-orange)
+
 A reusable PostgreSQL data model — built with [Drizzle ORM](https://orm.drizzle.team/) — for
 multi-track program registration systems: career accelerators, cohort programs,
 internship pipelines, hackathon/datathon signups, and similar.
@@ -36,10 +38,13 @@ standalone example.
 
 ## Entity overview
 
-```
-programs ──< tracks ──< applications >── applicants
-                              │
-                              └──< placements >── organizations
+```mermaid
+erDiagram
+    programs ||--o{ tracks : "has many"
+    tracks ||--o{ applications : "has many"
+    applicants ||--o{ applications : "has many"
+    applications ||--o{ placements : "has many"
+    organizations ||--o{ placements : "has many"
 ```
 
 | Table | Purpose |
