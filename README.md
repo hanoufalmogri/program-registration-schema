@@ -15,7 +15,7 @@ standalone example.
 
 ## Real-world usage
 
-This schema is generalized from two registration platforms I built at Dal (Saudo non-profit assosation for data scince & AI)
+This schema is generalized from two registration platforms I built at Dal (Saudi non-profit assosation for data scince & AI)
 
 - **Career Accelerator registration** — a two-track program (Job Shadowing 
   for students, Intrenships for recent graduates) matching 
