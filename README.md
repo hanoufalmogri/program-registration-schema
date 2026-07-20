@@ -13,6 +13,26 @@ generalized, sanitized version of that design — no real data, no
 organization-specific logic — so it can be reused or reviewed as a
 standalone example.
 
+## Real-world usage
+
+This schema is generalized from two registration platforms I built at Dal (Saudo non-profit assosation for data scince & AI)
+
+- **Career Accelerator registration** — a two-track program (Job Shadowing 
+  for students, Intrenships for recent graduates) matching 
+  accepted candidates to partner companies. This is the direct source of 
+  the `tracks` / `placements` split in this schema — company capacity 
+  changes mid-cohort were common enough that placements needed their own 
+  lifecycle, separate from the application decision.
+
+- **NODE program registration** — a technical cohort program with a 
+  scored interview pipeline. This is where the `applications.score` field 
+  and status pipeline came from; I also audited the original scoring 
+  workbook for data-quality issues (bad GPA conversions, missing 
+  validation, conflicting formulas) before this schema replaced parts of 
+  that manual process.
+
+Both platforms were built with Drizzle ORM against PostgreSQL on AWS RDS.
+
 ## Why this schema shape
 
 - **`programs` are separate from `tracks`.** A program (e.g. "Cohort 4") can
